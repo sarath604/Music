@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music/core/colors.dart';
 
 class ScreenLibrary extends StatelessWidget {
   const ScreenLibrary({super.key});
@@ -8,13 +9,11 @@ class ScreenLibrary extends StatelessWidget {
     return Scaffold(
       body:Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color.fromARGB(255, 2, 2, 35),
-        Color.fromARGB(255, 3, 3, 151)
-      ])),
-          child: SafeArea(
+          gradient: backgroundColor),
+          child: const SafeArea(
               child: Center(
-        child: Text('home'),
+        child: Text('library'
+        ,style: TextStyle(color: Colors.white),),
       ))),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music/Main_page/widget/bottomnavigation.dart';
+import 'package:music/core/colors.dart';
 import 'package:music/presentation/Home/screen_home.dart';
 import 'package:music/presentation/Library/screen_library.dart';
 import 'package:music/presentation/Search/screen_search.dart';
@@ -18,10 +19,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       body: Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-       Color.fromARGB(255, 2, 2, 35),
-        Color.fromARGB(255, 3, 3, 151)
-      ])),
+          gradient: backgroundColor),
         child: SafeArea(
             child: ValueListenableBuilder(
                 valueListenable: indexchangeNotifier,
@@ -31,10 +29,7 @@ class MainPage extends StatelessWidget {
       ),
       bottomNavigationBar: Container(
       decoration: const BoxDecoration(
-          gradient: LinearGradient(colors: [
-        Color.fromARGB(255, 2, 2, 35),
-        Color.fromARGB(255, 3, 3, 151)
-      ])),
+          gradient: backgroundColor),
         child: const Padding(
           padding: EdgeInsets.only(
             left: 50,

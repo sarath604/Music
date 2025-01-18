@@ -4,6 +4,7 @@ import 'package:music/core/space.dart';
 import 'package:music/presentation/Home/widget/artist_card.dart';
 import 'package:music/presentation/Home/widget/music_card.dart';
 import 'package:music/presentation/Home/widget/music_libraries_card.dart';
+import 'package:music/presentation/play_now/play_screen.dart';
 
 class ScreenHome extends StatelessWidget {
   const ScreenHome({super.key});
@@ -13,10 +14,7 @@ class ScreenHome extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-          Color.fromARGB(255, 2, 2, 35),
-          Color.fromARGB(255, 3, 3, 151)
-        ])),
+            gradient:backgroundColor),
         child: SafeArea(
           child: ListView(children: [
             Container(
@@ -28,7 +26,7 @@ class ScreenHome extends StatelessWidget {
                       bottomRight: Radius.circular(25),
                       bottomLeft: Radius.circular(25))),
               child: Padding(
-                padding: const EdgeInsets.only(left: 10,right: 10),
+                padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Column(
                   children: [
                     Row(
@@ -39,7 +37,7 @@ class ScreenHome extends StatelessWidget {
                               Icons.menu,
                               color: Colors.white,
                             )),
-                        Spacer(),
+                        const Spacer(),
                         IconButton(
                             onPressed: () {},
                             icon: const Icon(
@@ -49,13 +47,22 @@ class ScreenHome extends StatelessWidget {
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 40,right: 40),
-                      child: const Row(
+                      padding: EdgeInsets.only(left: 40, right: 40),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            'Play Now',
-                            style: TextStyle(color: Colors.white),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) {
+                                  return PlayScreen();
+                                }),
+                              );
+                            },
+                            child: Text(
+                              'Play Now',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                           Text(
                             'Tracks',
@@ -73,11 +80,20 @@ class ScreenHome extends StatelessWidget {
               ),
             ),
             sHeight,
-            AlbamList(),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: AlbamList(),
+            ),
             sHeight,
-           ArtistsList(),
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: ArtistsList(),
+            ),
             sHeight,
-            LibraryList()
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: LibraryList(),
+            )
           ]),
         ),
       ),
