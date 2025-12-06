@@ -12,7 +12,7 @@ class ScreenSearch extends StatelessWidget {
           gradient: backgroundColor),
           child: const SafeArea(
               child: Center(
-        child: Text('search',
+        child: Text('search page',
         style: TextStyle(color: Colors.white),
         ),
       ))),

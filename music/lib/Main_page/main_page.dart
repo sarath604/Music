@@ -6,7 +6,7 @@ import 'package:music/presentation/Library/screen_library.dart';
 import 'package:music/presentation/Search/screen_search.dart';
 
 class MainPage extends StatelessWidget {
-  MainPage({super.key});
+  const MainPage({super.key});
 
   final page = const [
     ScreenHome(),

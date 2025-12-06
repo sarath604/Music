@@ -12,7 +12,7 @@ class ScreenLibrary extends StatelessWidget {
           gradient: backgroundColor),
           child: const SafeArea(
               child: Center(
-        child: Text('library'
+        child: Text('library page'
         ,style: TextStyle(color: Colors.white),),
       ))),
     );

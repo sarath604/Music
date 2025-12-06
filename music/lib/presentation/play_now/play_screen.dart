@@ -9,8 +9,7 @@ class PlayScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-            gradient: backgroundColor),
+        decoration: const BoxDecoration(gradient: backgroundColor),
         child: SafeArea(
           child: ListView(
             children: [
@@ -80,7 +79,92 @@ class PlayScreen extends StatelessWidget {
                       ),
                       const Text(
                         'Aurora',
-                        style: textCustom,
+                        style: TextStyle(color: Colors.grey, fontSize: 15),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              '2:01',
+                              style: textCustom,
+                            ),
+                            SizedBox(
+                              width: 250,
+                              height: 20,
+                              child: Slider(
+                                value: 50,
+                                onChanged: (value) {},
+                                min: 0,
+                                max: 100,
+                                activeColor: Colors.white,
+                                inactiveColor: Colors.grey,
+                              ),
+                            ),
+                            const Text(
+                              '4:01',
+                              style: textCustom,
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30,right: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                         Stack(
+                              children: [
+                                const CircleAvatar(
+                                  radius: 30,
+                                  backgroundColor:
+                                      Color.fromARGB(169, 158, 158, 158),
+                                ),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                      Icons.keyboard_arrow_left,
+                                      size: 50,
+                                      color: Colors.white,
+                                    ))
+                              ],
+                            ),
+                            Stack(
+                              children: [
+                                const CircleAvatar(
+                                  radius: 40,
+                                  backgroundColor:
+                                      Color.fromARGB(169, 158, 158, 158),
+                                ),
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                      Icons.play_arrow,
+                                      size: 60,
+                                      color: Colors.white,
+                                    ))
+                              ],
+                            ),
+                            Stack(
+                              children: [
+                                const CircleAvatar(
+                                  radius: 30,
+                                  backgroundColor:
+                                      Color.fromARGB(169, 158, 158, 158),
+                                ),
+                                
+                                IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                      Icons.keyboard_arrow_right,
+                                      size: 50,
+                                      color: Colors.white,
+                                    ))
+                              ],
+                            ),
+                          ],
+                        ),
                       )
                     ],
                   ),
